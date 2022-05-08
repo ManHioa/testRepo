@@ -35,13 +35,14 @@ let currentIP = null;
 let currentItemType = 'mac';
 
 let currentItemTypeList = [];
-
+// khai bao Array
 let macArr = [];
 let typeArr = [];
 let hostnameArr = [];
 let timeArr = [];
 let testArr = [];
 
+// tao select option cho cac truong cua IP
 options = Object.keys(jsonData[ips[0]]);
 for (let i = 0; i < length.options; i++) {
     tabletr += `<td value="${i}">${i}</td>`;
@@ -51,8 +52,10 @@ tabletr.innerHTML = tabletd;
 for (const key of options) {
     // console.log(`${key} => ${jsonData[ip][key]}`);
     myOptionItem += `<option value="${key}}">${key}</option>`;
+
     switch (key) {
         case 'mac':
+            // xet tung truong cua moi ipp neu thoa man thi luu vao mang tuong ung
             for (ip of ips) {
                 macArr.push(jsonData[ip][key]);
             }
@@ -83,19 +86,17 @@ myOptionItem = " ";
 mySelectItem.addEventListener("change", ChangeSelectionItem);
 
 // gan thay doi cho select ip
-
 function ChangeSelectionItem(e) {
     let value = e.target.options[e.target.selectedIndex].text;
     currentItemType = value;
 }
 
+// Ham Add cac truong trong IP muon hien thi
 function addRow() {
     // var myIp = document.getElementById("mySelectIp");
-    var myItem = document.getElementById("mySelectItem");
+    // var myItem = document.getElementById("mySelectItem");
     var rowCount = myTable.rows.length;
-    // console.log(rowCount);
     for (let i = 0; i < rowCount; i++) {
-        // if (currentIP == myTable.rows[i].cells[1].innerHTML) {
         //update this row
         switch (currentItemType) {
             case 'mac':
@@ -114,12 +115,14 @@ function addRow() {
     }
 }
 
+// xu ly sau moi lan Add hay Delete
 function updateRow(cellIndex, arr) {
     for (let i = 0; i < myTable.rows.length; i++) {
         myTable.rows[i].cells[cellIndex].innerHTML = arr[i] ? arr[i] : '-';
     }
 }
 
+// Ham xoa
 function deleteRow(obj) {
     var index = obj.parentNode.parentNode.rowIndex;
     let cellIndex = null;

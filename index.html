@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css"> </head>
+
+<body>
+    <table>
+        <div class="container">
+            <div class="row">
+                <!-- <select class="select" name="ip" id="mySelectIp">
+                    <option value=""></option>
+                </select> -->
+            </div>
+            <div class="row">
+                <select class="select" name="item" id="mySelectItem">
+                    <option value="nothing">-----Chọn item------</option>
+                </select>
+            </div>
+        </div>
+        <br/>
+
+        <tr>
+            <input type="button" id="add" value="Add" onclick="Javascript:addRow()" style="width:80px  ; height:40px; color:white;background-color: gray; cursor:pointer;"></td>
+        </tr>
+    </table>
+
+
+    <table class="table" id="myTable">
+        <thead id="thead">
+
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+    <br/>
+    <br>
+    <table id="myTableData" border="1" cellpadding="2">
+        <tr bgcolor="#Green" style="color:white;" id="tabletr">
+        </tr>
+    </table>
+    <script src="./app.js"></script>
+
+</body>
+
+</html>

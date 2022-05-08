@@ -1,4 +1,4 @@
-var jsonData = {}; // declare json variable
+var jsonData = {}; // declare json variable  
 var item;
 $.ajax({
     url: "./data.json",
